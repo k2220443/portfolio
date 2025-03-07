@@ -1,0 +1,643 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0; /* Light background color */
+    color:beige; /* Dark text color */
+}
+
+header {
+    background: white; /* Darker header background */
+    color: #ecf0f1; /* Light text color for header */
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ecf0f1; /* Light link color */
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    text-decoration: underline;
+}
+
+.hero {
+    padding: 2rem;
+    text-align: center;
+    background-image: url('img1.jpg'); /* Background image */
+    background-size: cover; Ensures the image covers the entire section
+    background-position: center; /* Centers the image */
+    color: #ecf0f1; /* Light text color */
+    position: relative; /* Position relative for overlay */
+}
+
+/* Add a pseudo-element for the brightness effect */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1; /* Ensure it sits above the background but below the text */
+}
+
+.hero h1,
+.hero p {
+    position: relative; /* Position relative to sit above the overlay */
+    z-index: 2; /* Ensure text is above the overlay */
+}
+
+.cta-button {
+    background: pink; /* Green button color */
+    color: #fff; /* White text color */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.feature {
+    background: #fff; /* White background for features */
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2c3e50; /* Dark footer background */
+    color: #ecf0f1; /* Light text color for footer */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff; /* White background for forms */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc; /* Light border color */
+    border-radius: 5px;
+}
+
+form button {
+    background: #8400ff; /* Blue button color */
+    color: #fff; /* White text color */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #e0b013; /* Darker blue on hover */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: #0a73db; /* Dark sidebar background */
+    padding: 2rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 8px solid #9ec1e4; /* Optional: border color */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-link {
+    color: #d112b1;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #d218a4;
+}
+
+/* Navigation Styles */
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li a {
+    display: flex;
+    align-items: center;
+    color: #a8a9b4; /* Light gray link color */
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.nav-links li a i {
+    margin-right: 8px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #fff; /* White on hover */
+    background: #18d26e; /* Green background on hover */
+    border-radius: 4px;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    min-height: 100vh;
+    padding: 0 30px;
+    background: #f3f0f3; /* Light background for main content */
+    position: relative;
+}
+
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.typing-text {
+    font-size: 1.5rem;
+}
+
+.typed-text {
+    color: #18d26e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    body {
+        flex-direction: column;
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 0;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #18d26e; /* Green section title color */
+}
+
+/* About Section */
+.about-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.resume-download {
+    margin: 2rem 0;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e406d1;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #149ddd;
+    transform: translateY(-2px);
+}
+
+.download-btn i {
+    font-size: 1.2rem;
+}
+
+.personal-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.info-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #2c2c2c;
+}
+
+/* Resume Section */
+.resume-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.resume-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.resume-item h4 {
+    color: #18d26e; /* Green for resume item titles */
+    margin-bottom: 10px;
+}
+
+.resume-item .date {
+    color: #a8a9b4; /* Light gray for dates */
+    font-style: italic;
+}
+
+.resume-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* Contact Section */
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.contact-item {
+    background: rgba(219, 146, 9, 0.05);
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #18d26e; /* Green for icons */
+    margin-bottom: 1rem;
+}
+
+/* Form Styles Update */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    background:rgb(4, 220, 228);
+    border: none;
+    border-radius: 4px;
+    color: #061bdd;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgb(233, 11, 85);
+}
+
+.submit-btn {
+    background: #18d26e;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #149ddd;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 4rem 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.skill-card {
+    background-color:yellow;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.skill-card h3 {
+    color: #18d26e; /* Green for skill titles */
+    margin-bottom: 1rem;
+}
+
+.skill-list {
+    list-style: none;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+.skill-list li {
+    padding: 5px 0;
+    color: #a8a9b4;
+}
+
+.skill-list li:before {
+    content: "▹";
+    color: #18d26e;
+    margin-right: 8px;
+}
+
+.progress-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.progress {
+    background-color: #18d26e; /* Green for progress bars */
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.ship-varieties {
+    padding: 2rem;
+    text-align: center;
+    background-image: url(''); /* Background image for ship varieties */
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.ship {
+    display: inline-block;
+    width: 30%;
+    margin: 1rem;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ship img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.ship h3 {
+    margin: 1rem 0;
+}
+
+.ship p {
+    padding: 0 1rem 1rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin-top: 20px;
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+
+.profile-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 4px solid #d6d30e; /* Optional: border color */
+}
+
+.profile-info {
+    max-width: 600px;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    background-color: #f4f4f4; /* Light background for contact section */
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.contact-section .section-title {
+    font-size: 2.5rem;
+    color: #18d26e; /* Green section title color */
+    margin-bottom: 2rem;
+}
+
+/* Contact Content */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-item {
+    background: rgba(255, 255, 255, 0.05); /* Slight transparent background */
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item i {
+    font-size: 2.5rem;
+    color: #18d26e; /* Green icon color */
+    margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff; /* White text for heading */
+}
+
+.contact-item p {
+    font-size: 1rem;
+    color: #a8a9b4; /* Light gray for text */
+}
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05); /* Slight transparent background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #a8a9b4; /* Placeholder color */
+}
+
+form button {
+    background: #18d26e; /* Green button color */
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #149ddd; /* Blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+}
